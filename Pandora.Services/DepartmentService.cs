@@ -69,13 +69,14 @@ namespace Pandora.Services
 
             if (oldDepartment != null)
             {
-                if (oldDepartment.City != null)
+                if (oldDepartment.City != null && oldDepartment.City.Id != newDepartment.City.Id)
                 {
-                    this.dbContext.Entry(oldDepartment.City).State = EntityState.Modified;
+                    this.dbContext.Entry(oldDepartment.City).State = EntityState.Detached;
+                    oldDepartment.City = newDepartment.City;
                 }
 
                 oldDepartment.Name = newDepartment.Name;
-                oldDepartment.City = newDepartment.City;
+                
 
                 await dbContext.SaveChangesAsync();
             }

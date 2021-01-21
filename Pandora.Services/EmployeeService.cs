@@ -82,19 +82,29 @@ namespace Pandora.Services
 
             if (oldEmployee != null)
             {
-                if (oldEmployee.Department != null)
+                try
                 {
-                    this.dbContext.Entry(oldEmployee.Department).State = EntityState.Modified;
-                }                
+                    if (oldEmployee.Department != null && oldEmployee.Department.Id != newEmployee.Department.Id)
+                    {
+                        this.dbContext.Entry(oldEmployee.Department).State = EntityState.Detached;
+                        this.dbContext.Entry(oldEmployee.Department.City).State = EntityState.Detached;
+                        
+                        oldEmployee.Department = newEmployee.Department;
+                    }
 
-                oldEmployee.FirstName = newEmployee.FirstName;
-                oldEmployee.LastName = newEmployee.LastName;
-                oldEmployee.PhoneNumber = newEmployee.PhoneNumber;
-                oldEmployee.Salary = newEmployee.Salary;
-                oldEmployee.Role = newEmployee.Role;
-                oldEmployee.Department = newEmployee.Department;
+                    oldEmployee.FirstName = newEmployee.FirstName;
+                    oldEmployee.LastName = newEmployee.LastName;
+                    oldEmployee.PhoneNumber = newEmployee.PhoneNumber;
+                    oldEmployee.Salary = newEmployee.Salary;
+                    oldEmployee.Role = newEmployee.Role;
+                    
 
-                await dbContext.SaveChangesAsync();
+                    await dbContext.SaveChangesAsync();
+                }
+                catch (System.Exception ex)
+                {
+                    throw;
+                }
             }
 
             return oldEmployee;
