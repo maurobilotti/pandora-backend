@@ -7,12 +7,12 @@ using SixLabors.ImageSharp.Processing;
 
 namespace UploadFilesServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/upload")]
     [ApiController]
     public class UploadController : ControllerBase
     {
-        [HttpPost, DisableRequestSizeLimit]
-        public IActionResult Upload()
+        [HttpPost("{id}"), DisableRequestSizeLimit]
+        public IActionResult Upload(int id)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace UploadFilesServer.Controllers
 
                 if (file.Length > 0)
                 {
-                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fileName = $"{id}.jpg";
                     var fullPath = Path.Combine(pathToSave, fileName);
                     var dbPath = Path.Combine(folderName, fileName);
 

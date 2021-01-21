@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pandora.Models.Entities;
 using Pandora.Services.Interfaces;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Pandora.Controllers
@@ -10,6 +11,7 @@ namespace Pandora.Controllers
     public class EmployeeController : ControllerBase
     {
         private IEmployeeService employeeService;
+        private readonly string staticFilesFolder = Path.Combine("StaticFiles", "Images");
 
         public EmployeeController(IEmployeeService employeeService)
         {
@@ -39,7 +41,20 @@ namespace Pandora.Controllers
         {
             var result = await employeeService.SaveEmployee(employee);
 
+            RenameImageIfExists(result.Id);
+            
             return new OkObjectResult(result);
+        }
+
+        private void RenameImageIfExists(int id)
+        {
+            var imageDirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), staticFilesFolder);
+            var oldImagePath = $"{imageDirectoryPath}\\0.jpg";
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                var newImagePath = $"{imageDirectoryPath}\\{id}.jpg";
+                System.IO.File.Move(oldImagePath, newImagePath);
+            }
         }
 
         [HttpPut("{id}")]

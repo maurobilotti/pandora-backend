@@ -40,9 +40,9 @@ namespace Pandora.Services
 
             if (employee.Department != null)
             {
-                this.dbContext.Entry(employee.Department).State = EntityState.Unchanged;
+                this.dbContext.Entry(employee.Department).State = EntityState.Detached;                
                 if(employee.Department.City != null)
-                    this.dbContext.Entry(employee.Department.City).State = EntityState.Unchanged;
+                    this.dbContext.Entry(employee.Department.City).State = EntityState.Detached;
             }
 
             await dbContext.SaveChangesAsync();
