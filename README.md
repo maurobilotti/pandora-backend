@@ -1,4 +1,4 @@
-# PandoraBackend
+# Pandora Backend
 
 CRUD project for a company challenge. 
 The frontend project can be found at: https://github.com/maurobilotti/pandora-frontend
