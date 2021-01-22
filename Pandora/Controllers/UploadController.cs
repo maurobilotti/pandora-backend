@@ -26,6 +26,11 @@ namespace UploadFilesServer.Controllers
                     var fullPath = Path.Combine(pathToSave, fileName);
                     var dbPath = Path.Combine(folderName, fileName);
 
+                    if (System.IO.File.Exists(fullPath))
+                    {
+                        System.IO.File.Delete(fullPath);
+                    }
+
                     using (var image = Image.Load(file.OpenReadStream()))
                     {
                         image.Mutate(x => x.Resize(480, 600));

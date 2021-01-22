@@ -94,6 +94,7 @@ namespace Pandora.Services
 
                     oldEmployee.FirstName = newEmployee.FirstName;
                     oldEmployee.LastName = newEmployee.LastName;
+                    oldEmployee.Email = newEmployee.Email;
                     oldEmployee.PhoneNumber = newEmployee.PhoneNumber;
                     oldEmployee.Salary = newEmployee.Salary;
                     oldEmployee.Role = newEmployee.Role;
@@ -103,7 +104,7 @@ namespace Pandora.Services
                 }
                 catch (System.Exception ex)
                 {
-                    throw;
+                    throw ex;
                 }
             }
 

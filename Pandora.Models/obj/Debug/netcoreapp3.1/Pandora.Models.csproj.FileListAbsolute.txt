@@ -1,9 +1,0 @@
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\bin\Debug\netcoreapp3.1\Pandora.Models.deps.json
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\bin\Debug\netcoreapp3.1\Pandora.Models.dll
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\bin\Debug\netcoreapp3.1\Pandora.Models.pdb
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\obj\Debug\netcoreapp3.1\Pandora.Models.csprojAssemblyReference.cache
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\obj\Debug\netcoreapp3.1\Pandora.Models.AssemblyInfoInputs.cache
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\obj\Debug\netcoreapp3.1\Pandora.Models.AssemblyInfo.cs
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\obj\Debug\netcoreapp3.1\Pandora.Models.csproj.CoreCompileInputs.cache
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\obj\Debug\netcoreapp3.1\Pandora.Models.dll
-C:\Projects\Pandora-Challenge\backend\Pandora.Models\obj\Debug\netcoreapp3.1\Pandora.Models.pdb

@@ -16,16 +16,38 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+Pandora/[Dd]ebug/
+Pandora/[Dd]ebugPublic/
+Pandora/[Rr]elease/
+Pandora/[Rr]eleases/
+Pandora/x64/
+Pandora/x86/
+Pandora/bld/
+Pandora/[Bb]in/
+Pandora/[Oo]bj/
+Pandora/[Ll]og/
+
+Pandora.Models/[Dd]ebug/
+Pandora.Models/[Dd]ebugPublic/
+Pandora.Models/[Rr]elease/
+Pandora.Models/[Rr]eleases/
+Pandora.Models/x64/
+Pandora.Models/x86/
+Pandora.Models/bld/
+Pandora.Models/[Bb]in/
+Pandora.Models/[Oo]bj/
+Pandora.Models/[Ll]og/
+
+Pandora.Services/[Dd]ebug/
+Pandora.Services/[Dd]ebugPublic/
+Pandora.Services/[Rr]elease/
+Pandora.Services/[Rr]eleases/
+Pandora.Services/x64/
+Pandora.Services/x86/
+Pandora.Services/bld/
+Pandora.Services/[Bb]in/
+Pandora.Services/[Oo]bj/
+Pandora.Services/[Ll]og/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -273,3 +295,4 @@ __pycache__/
 # tools/
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore
+
